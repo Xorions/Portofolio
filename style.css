@@ -177,3 +177,60 @@ footer {
         font-size: 14px;
     }
 }
+
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  nav ul li {
+    display: block;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-container img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 15px;
+  }
+
+  .profile-container h1,
+  .profile-container h2 {
+    font-size: 1.5rem;
+  }
+
+  section {
+    padding: 15px;
+  }
+
+  p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .contact-icons img {
+    width: 35px;
+    height: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-container img {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-container h1 {
+    font-size: 1.3rem;
+  }
+
+  p {
+    font-size: 0.9rem;
+  }
+}
