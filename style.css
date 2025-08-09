@@ -153,3 +153,27 @@ footer {
   background: #000000;
   color: #fff;
 }
+
+/* Responsive Design untuk HP */
+@media (max-width: 768px) {
+    .skills-table {
+        font-size: 14px;
+        width: 100%;
+    }
+    .skills-table th, .skills-table td {
+        padding: 8px;
+    }
+
+    .contact-icons {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+    .contact-icons img {
+        width: 35px;
+        height: 35px;
+    }
+
+    .location {
+        font-size: 14px;
+    }
+}
