@@ -9,135 +9,84 @@ body {
   line-height: 1.6;
   background-color: #121212;
   color: #dcdcdc;
-  padding-bottom: 50px;
 }
 
 header {
-  background: #000000;
+  background: #000;
   color: #fff;
-  padding: 20px 0;
-}
-  /*background: #4c3c24;*/
-
-nav {
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
-  max-width: 1000px;
-  margin: auto;
-  padding: 0 20px;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-nav ul {
-  list-style: none;
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+.logo span {
+  color: #f1c40f;
+}
+
+.nav-links {
   display: flex;
   gap: 20px;
 }
-
-nav a {
+.nav-links a {
   color: #fff;
   text-decoration: none;
+  transition: color 0.3s;
+}
+.nav-links a:hover {
+  color: #f1c40f;
+}
+
+.burger {
+  display: none;
+  font-size: 26px;
+  cursor: pointer;
 }
 
 .hero {
   display: flex;
-  align-items: center;
   justify-content: center;
-  gap: 40px;
   padding: 60px 20px;
   background: #222;
 }
-
 .hero-content {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 40px;
+  gap: 50px;
   max-width: 1000px;
   width: 100%;
 }
-
-.hero-text {
-  flex: 1;
-}
-
-.hero-image img {
-  width: 250px;
-  height: 250px;
-  object-fit: cover;
-  border-radius: 50%; /* bulat */
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-.hero h2 {
+.hero-text h2 {
   font-size: 2.5rem;
   margin-bottom: 10px;
 }
-
-.hero .cta {
+.hero-text p {
+  font-size: 1.1rem;
+}
+.cta {
   display: inline-block;
   margin-top: 20px;
-  padding: 10px 25px;
+  padding: 10px 20px;
   background: #424c4f;
-  color: #fff;
+  color: white;
   text-decoration: none;
+  transition: background 0.3s;
 }
-
-.skills-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
-    background-color: #1e1e1e;
-    color: white;
-    border-radius: 8px;
-    overflow: hidden;
+.cta:hover {
+  background: #5a6a6f;
 }
-
-.skills-table th, .skills-table td {
-    border: 1px solid #444;
-    padding: 12px;
-    text-align: left;
-}
-
-.skills-table th {
-    background-color: #333;
-    font-weight: bold;
-}
-
-.skills-table tr:nth-child(even) {
-    background-color: #2a2a2a;
-}
-
-.skills-table tr:hover {
-    background-color: #3a3a3a;
-}
-
-.contact-title {
-    text-align: center;
-    margin-bottom: 15px;
-}
-
-.contact-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin-bottom: 10px;
-}
-
-.contact-icons img {
-    width: 40px;
-    height: 40px;
-    transition: transform 0.2s ease;
-    filter: brightness(0) invert(1); /* Biar putih di dark mode */
-}
-
-.contact-icons img:hover {
-    transform: scale(1.1);
-}
-
-.location {
-    text-align: center;
-    font-size: 14px;
-    color: #ccc;
+.hero-image img {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 section {
@@ -146,91 +95,83 @@ section {
   padding: 0 20px;
 }
 
+section h2 {
+  margin-bottom: 15px;
+}
+
+ul {
+  list-style: disc inside;
+  margin-left: 20px;
+}
+
+.skills-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  background: #1e1e1e;
+}
+.skills-table th, .skills-table td {
+  border: 1px solid #444;
+  padding: 12px;
+}
+.skills-table th {
+  background: #333;
+}
+
+.contact-title {
+  text-align: center;
+  margin-bottom: 15px;
+}
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+.contact-icons img {
+  width: 40px;
+  height: 40px;
+  filter: brightness(0) invert(1);
+  transition: transform 0.3s;
+}
+.contact-icons img:hover {
+  transform: scale(1.1);
+}
+.location {
+  text-align: center;
+  font-size: 14px;
+  color: #ccc;
+}
+
 footer {
   text-align: center;
-  margin-top: 50px;
-  padding: 20px;
-  background: #000000;
+  padding: 15px;
+  background: #000;
   color: #fff;
+  margin-top: 30px;
 }
 
-/* Responsive Design untuk HP */
+/* Responsive */
 @media (max-width: 768px) {
-    .skills-table {
-        font-size: 14px;
-        width: 100%;
-    }
-    .skills-table th, .skills-table td {
-        padding: 8px;
-    }
-
-    .contact-icons {
-        flex-wrap: wrap;
-        gap: 15px;
-    }
-    .contact-icons img {
-        width: 35px;
-        height: 35px;
-    }
-
-    .location {
-        font-size: 14px;
-    }
-}
-
-@media (max-width: 768px) {
-  nav ul {
+  .nav-links {
+    display: none;
     flex-direction: column;
-    align-items: center;
-    gap: 10px;
+    background: #111;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
   }
-
-  nav ul li {
+  .nav-links.active {
+    display: flex;
+  }
+  .burger {
     display: block;
   }
-
-  .profile-container {
+  .hero-content {
     flex-direction: column;
     text-align: center;
-  }
-
-  .profile-container img {
-    width: 150px;
-    height: 150px;
-    margin-bottom: 15px;
-  }
-
-  .profile-container h1,
-  .profile-container h2 {
-    font-size: 1.5rem;
-  }
-
-  section {
-    padding: 15px;
-  }
-
-  p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-  }
-
-  .contact-icons img {
-    width: 35px;
-    height: 35px;
-  }
-}
-
-@media (max-width: 480px) {
-  .profile-container img {
-    width: 120px;
-    height: 120px;
-  }
-
-  .profile-container h1 {
-    font-size: 1.3rem;
-  }
-
-  p {
-    font-size: 0.9rem;
   }
 }
